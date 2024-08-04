@@ -39,12 +39,12 @@ DROP COLUMN `Entity`;
 
 --p3
 
-select id, avg(Number_rabies) n_avg, min(Number_rabies) n_min, 
-max(Number_rabies) n_max, sum(Number_rabies) n_sum 
+select entity_id, avg(Number_rabies) n_avg, min(Number_rabies) n_min, 
+max(Number_rabies) n_max, sum(Number_rabies) n_sum, count(1) 
 from infectious_cases
 where Number_rabies is not null
-group by id
-order by n_avg
+group by entity_id
+order by n_avg desc
 limit 10;
 
 --p4
